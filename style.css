@@ -1,0 +1,92 @@
+
+.book-card { 
+    width: 360px;
+    height: 600px;
+    position: relative;
+    background-color: #041E34;
+    border: 1px solid #215888;
+    box-shadow: 0 2px 8px rgba(87, 135, 174, 0.5);
+    margin: 48px;
+    padding: 16px;
+    text-align: center;
+    border-radius: 5%;
+       
+}
+
+hr {
+   margin: 16px 0;
+   border-color: #215888;
+}
+
+.price {
+    font-size: 18px;
+    color: #A30B37;
+    font-weight: bold;
+}
+
+.price-like {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.td-width {
+    width: 140px;
+    vertical-align: top;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 4px;
+    margin-top: 8px;
+    position: absolute;
+    bottom: 16px;
+    width: calc(100% - 32px);
+}
+
+.old-comment {
+    display: block;
+    max-height: 148px;
+    overflow-y: scroll;
+    margin-bottom: 8px;
+    border-spacing: 0 8px; 
+    border-collapse: separate;
+}
+
+.old-comment::-webkit-scrollbar {
+    width: 8px; 
+    background-color: #1a3b5d; 
+    border-radius: 4px; 
+}
+
+.old-comment::-webkit-scrollbar-thumb {
+    background-color: #66a3d2; 
+    border-radius: 4px; 
+}
+
+.old-comment::-webkit-scrollbar-thumb:hover {
+    background-color: #4c8ab5; 
+}
+
+.old-comment::-webkit-scrollbar-track {
+    background-color: #102a45;     
+}
+
+.input{
+    flex: 1;
+    color: #102a45;
+    
+}
+
+input::placeholder {
+    color: #93bff2;
+  }
