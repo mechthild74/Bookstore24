@@ -1,4 +1,5 @@
 function init() {
+    getFromLocalStorage();
     renderCards();
 }
 
@@ -28,15 +29,30 @@ function calculateLike(index) {
 
 function addComment(index) {
     let inputField = document.getElementById('input');
-    let input = inputField.value;
-    console.log(input);
-    inputField.value ="";
-    inputField.placeholder = "Schreibe Deinen Kommentar";
-   
-    let newComment = {
-        "name": "Mechthild",
-        "comment": input
-    };
-    books[index].comments.unshift(newComment);
-    renderCards();
+    
+    if (inputField.value != "") {
+        let input = inputField.value;
+        
+        inputField.value ="";
+        inputField.placeholder = "Schreibe Deinen Kommentar";
+    
+        let newComment = {
+            "name": "Mechthild",
+            "comment": input
+        };
+        books[index].comments.unshift(newComment);
+        saveToLocalStorage();
+        renderCards();
+    }
+}
+
+function saveToLocalStorage(){
+    localStorage.setItem("books", JSON.stringify(books));
+}
+
+function getFromLocalStorage(){
+    let updateBooks = JSON.parse(localStorage.getItem("books"));
+    if (updateBooks.length > 0) {
+    books = updateBooks
+    }
 }
