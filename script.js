@@ -14,17 +14,19 @@ function renderCards() {
 
 function toggleLike(index) {
     calculateLike(index);
-    books[index].liked = !books[index].liked;
     renderCards();
 }
 
 function calculateLike(index) {
     if (books[index].liked === true) {
         books[index].likes = books[index].likes - 1;
+        books[index].liked = false;
     }
     else {
         books[index].likes = books[index].likes + 1;
+        books[index].liked = true;
     };
+    saveToLocalStorage();
 }
 
 function addComment(index) {
@@ -52,7 +54,7 @@ function saveToLocalStorage(){
 
 function getFromLocalStorage(){
     let updateBooks = JSON.parse(localStorage.getItem("books"));
-    if (updateBooks.length > 0) {
+    if (updateBooks && updateBooks.length > 0) {
     books = updateBooks
     }
 }
